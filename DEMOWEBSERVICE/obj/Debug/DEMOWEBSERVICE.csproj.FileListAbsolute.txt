@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\bin\Debug\DEMOWEBSERVICE.exe.config
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\bin\Debug\DEMOWEBSERVICE.exe
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\bin\Debug\DEMOWEBSERVICE.pdb
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\obj\Debug\DEMOWEBSERVICE.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\obj\Debug\DEMOWEBSERVICE.Form1.resources
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\obj\Debug\DEMOWEBSERVICE.Properties.Resources.resources
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\obj\Debug\DEMOWEBSERVICE.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\obj\Debug\DEMOWEBSERVICE.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\obj\Debug\DEMOWEBSERVICE.exe
+C:\Users\Admin\source\repos\QUANLYBANHANG\DEMOWEBSERVICE\obj\Debug\DEMOWEBSERVICE.pdb

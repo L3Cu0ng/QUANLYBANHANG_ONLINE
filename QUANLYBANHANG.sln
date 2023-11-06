@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QUANLYBANHANG", "QUANLYBANHANG\QUANLYBANHANG.csproj", "{9AA3625B-BB07-4067-B0F4-37190CF02787}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60A8E38E-E5BC-4608-AD3E-8278D811F4D5} = {60A8E38E-E5BC-4608-AD3E-8278D811F4D5}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WcfServiceProcessData(1)", "WcfServiceProcessData\", "{60A8E38E-E5BC-4608-AD3E-8278D811F4D5}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57189"
+		Debug.AspNetCompiler.PhysicalPath = "WcfServiceProcessData\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57189\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57189"
+		Release.AspNetCompiler.PhysicalPath = "WcfServiceProcessData\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57189\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57189"
+		SlnRelativePath = "WcfServiceProcessData\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEMOWEBSERVICE", "DEMOWEBSERVICE\DEMOWEBSERVICE.csproj", "{EC9A7480-29F2-4DA6-8948-43CF2D31FEDA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60A8E38E-E5BC-4608-AD3E-8278D811F4D5} = {60A8E38E-E5BC-4608-AD3E-8278D811F4D5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QUANLYBANHANG_MVC", "QUANLYBANHANG_MVC\QUANLYBANHANG_MVC.csproj", "{39366ED8-174C-4240-9DD6-2F1CBCFD2601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AA3625B-BB07-4067-B0F4-37190CF02787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA3625B-BB07-4067-B0F4-37190CF02787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA3625B-BB07-4067-B0F4-37190CF02787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA3625B-BB07-4067-B0F4-37190CF02787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A8E38E-E5BC-4608-AD3E-8278D811F4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A8E38E-E5BC-4608-AD3E-8278D811F4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A8E38E-E5BC-4608-AD3E-8278D811F4D5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A8E38E-E5BC-4608-AD3E-8278D811F4D5}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{EC9A7480-29F2-4DA6-8948-43CF2D31FEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9A7480-29F2-4DA6-8948-43CF2D31FEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9A7480-29F2-4DA6-8948-43CF2D31FEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9A7480-29F2-4DA6-8948-43CF2D31FEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39366ED8-174C-4240-9DD6-2F1CBCFD2601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39366ED8-174C-4240-9DD6-2F1CBCFD2601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39366ED8-174C-4240-9DD6-2F1CBCFD2601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39366ED8-174C-4240-9DD6-2F1CBCFD2601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8900CCBE-1C59-48CB-B0FC-B7918AD5B843}
+	EndGlobalSection
+EndGlobal

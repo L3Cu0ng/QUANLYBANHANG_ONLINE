@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbQUANLYBANHANGModelStoreContainer" CdmEntityContainer="dbQUANLYBANHANGEntities">
+    <EntitySetMapping Name="APPLICATIONS">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.APPLICATIONS">
+        <MappingFragment StoreEntitySet="APPLICATIONS">
+          <ScalarProperty Name="ID_APPLICATION" ColumnName="ID_APPLICATION" />
+          <ScalarProperty Name="APPLICATION_NAME" ColumnName="APPLICATION_NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GENDER">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.GENDER">
+        <MappingFragment StoreEntitySet="GENDER">
+          <ScalarProperty Name="PARTY_ID" ColumnName="PARTY_ID" />
+          <ScalarProperty Name="GENDER_TYPE_ID" ColumnName="GENDER_TYPE_ID" />
+          <ScalarProperty Name="FROM_DATE" ColumnName="FROM_DATE" />
+          <ScalarProperty Name="THRU_DATE" ColumnName="THRU_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GENDER_TYPE">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.GENDER_TYPE">
+        <MappingFragment StoreEntitySet="GENDER_TYPE">
+          <ScalarProperty Name="GENDER_TYPE_ID" ColumnName="GENDER_TYPE_ID" />
+          <ScalarProperty Name="GENDER_TYPE_NAME" ColumnName="GENDER_TYPE_NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GROUP_USER">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.GROUP_USER">
+        <MappingFragment StoreEntitySet="GROUP_USER">
+          <ScalarProperty Name="ID_GROUP" ColumnName="ID_GROUP" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GROUP_USER_RELATIONSHIP_USER">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.GROUP_USER_RELATIONSHIP_USER">
+        <MappingFragment StoreEntitySet="GROUP_USER_RELATIONSHIP_USER">
+          <ScalarProperty Name="PARTY_ID" ColumnName="PARTY_ID" />
+          <ScalarProperty Name="ID_GROUP" ColumnName="ID_GROUP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENU_FORM">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.MENU_FORM">
+        <MappingFragment StoreEntitySet="MENU_FORM">
+          <ScalarProperty Name="ID_MENU_FORM" ColumnName="ID_MENU_FORM" />
+          <ScalarProperty Name="MENU_FORM_NAME" ColumnName="MENU_FORM_NAME" />
+          <ScalarProperty Name="MENU_FORM_URL" ColumnName="MENU_FORM_URL" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="SORT_PARENT" ColumnName="SORT_PARENT" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="ID_MENU_FORM_PARENT" ColumnName="ID_MENU_FORM_PARENT" />
+          <ScalarProperty Name="DANH_MUC" ColumnName="DANH_MUC" />
+          <ScalarProperty Name="VISIBLE" ColumnName="VISIBLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARTY">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.PARTY">
+        <MappingFragment StoreEntitySet="PARTY">
+          <ScalarProperty Name="PARTY_ID" ColumnName="PARTY_ID" />
+          <ScalarProperty Name="TYPE_OF_PARTY" ColumnName="TYPE_OF_PARTY" />
+          <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USERNAME_H" ColumnName="USERNAME_H" />
+          <ScalarProperty Name="PASSWORD_H" ColumnName="PASSWORD_H" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSON">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.PERSON">
+        <MappingFragment StoreEntitySet="PERSON">
+          <ScalarProperty Name="PARTY_ID" ColumnName="PARTY_ID" />
+          <ScalarProperty Name="CURRENT_LAST_NAME" ColumnName="CURRENT_LAST_NAME" />
+          <ScalarProperty Name="CURRENT_FIRST_NAME" ColumnName="CURRENT_FIRST_NAME" />
+          <ScalarProperty Name="CURRENT_MIDDLE_NAME" ColumnName="CURRENT_MIDDLE_NAME" />
+          <ScalarProperty Name="CURRENT_NICKNAME" ColumnName="CURRENT_NICKNAME" />
+          <ScalarProperty Name="CURRENT_GENDER_TYPE_ID" ColumnName="CURRENT_GENDER_TYPE_ID" />
+          <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+          <ScalarProperty Name="PEOPLE_ID_NUMBER" ColumnName="PEOPLE_ID_NUMBER" />
+          <ScalarProperty Name="PEOPLE_ID_ISSUE_DATE" ColumnName="PEOPLE_ID_ISSUE_DATE" />
+          <ScalarProperty Name="PEOPLE_ID_ISSUE_PLACE" ColumnName="PEOPLE_ID_ISSUE_PLACE" />
+          <ScalarProperty Name="CURRENT_PHONE_NUMBER" ColumnName="CURRENT_PHONE_NUMBER" />
+          <ScalarProperty Name="CURRENT_EMAIL" ColumnName="CURRENT_EMAIL" />
+          <ScalarProperty Name="PERSON_IMAGE" ColumnName="PERSON_IMAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCHITIETHOADON">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.tbCHITIETHOADON">
+        <MappingFragment StoreEntitySet="tbCHITIETHOADON">
+          <ScalarProperty Name="MACHITIET" ColumnName="MACHITIET" />
+          <ScalarProperty Name="MASANPHAM" ColumnName="MASANPHAM" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+          <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDANHMUC">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.tbDANHMUC">
+        <MappingFragment StoreEntitySet="tbDANHMUC">
+          <ScalarProperty Name="MADANHMUC" ColumnName="MADANHMUC" />
+          <ScalarProperty Name="TENDANHMUC" ColumnName="TENDANHMUC" />
+          <ScalarProperty Name="DANHMUCCHA" ColumnName="DANHMUCCHA" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbHOADON">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.tbHOADON">
+        <MappingFragment StoreEntitySet="tbHOADON">
+          <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
+          <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+          <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbKHANHHANG">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.tbKHANHHANG">
+        <MappingFragment StoreEntitySet="tbKHANHHANG">
+          <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
+          <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSANPHAM">
+      <EntityTypeMapping TypeName="dbQUANLYBANHANGModel.tbSANPHAM">
+        <MappingFragment StoreEntitySet="tbSANPHAM">
+          <ScalarProperty Name="MASANPHAM" ColumnName="MASANPHAM" />
+          <ScalarProperty Name="TENSANPHAM" ColumnName="TENSANPHAM" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="MADANHMUC" ColumnName="MADANHMUC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="APPLICATIONS_MENU_FORM_RELATIONS" TypeName="dbQUANLYBANHANGModel.APPLICATIONS_MENU_FORM_RELATIONS" StoreEntitySet="APPLICATIONS_MENU_FORM_RELATIONS">
+      <EndProperty Name="APPLICATIONS">
+        <ScalarProperty Name="ID_APPLICATION" ColumnName="ID_APPLICATION" />
+      </EndProperty>
+      <EndProperty Name="MENU_FORM">
+        <ScalarProperty Name="ID_MENU_FORM" ColumnName="ID_MENU_FORM" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GROUP_RELATIONSHIP_MENU_FORM" TypeName="dbQUANLYBANHANGModel.GROUP_RELATIONSHIP_MENU_FORM" StoreEntitySet="GROUP_RELATIONSHIP_MENU_FORM">
+      <EndProperty Name="GROUP_USER_RELATIONSHIP_USER">
+        <ScalarProperty Name="PARTY_ID" ColumnName="PARTY_ID" />
+        <ScalarProperty Name="ID_GROUP" ColumnName="ID_GROUP" />
+      </EndProperty>
+      <EndProperty Name="MENU_FORM">
+        <ScalarProperty Name="ID_MENU_FORM" ColumnName="ID_MENU_FORM" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="psDeleteRecordSANPHAM" FunctionName="dbQUANLYBANHANGModel.Store.psDeleteRecordSANPHAM" />
+    <FunctionImportMapping FunctionImportName="psGetTableDANHMUC" FunctionName="dbQUANLYBANHANGModel.Store.psGetTableDANHMUC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbQUANLYBANHANGModel.psGetTableDANHMUC_Result">
+          <ScalarProperty Name="autoincrement" ColumnName="autoincrement" />
+          <ScalarProperty Name="MADANHMUC" ColumnName="MADANHMUC" />
+          <ScalarProperty Name="tendanhmuc" ColumnName="tendanhmuc" />
+          <ScalarProperty Name="danhmuccha" ColumnName="danhmuccha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="psGetTableLOGIN" FunctionName="dbQUANLYBANHANGModel.Store.psGetTableLOGIN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbQUANLYBANHANGModel.psGetTableLOGIN_Result">
+          <ScalarProperty Name="PARTY_ID" ColumnName="PARTY_ID" />
+          <ScalarProperty Name="TYPE_OF_PARTY" ColumnName="TYPE_OF_PARTY" />
+          <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USERNAME_H" ColumnName="USERNAME_H" />
+          <ScalarProperty Name="PASSWORD_H" ColumnName="PASSWORD_H" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="psGetTableSANPHAM" FunctionName="dbQUANLYBANHANGModel.Store.psGetTableSANPHAM">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbQUANLYBANHANGModel.psGetTableSANPHAM_Result">
+          <ScalarProperty Name="MASANPHAM" ColumnName="MASANPHAM" />
+          <ScalarProperty Name="TENSANPHAM" ColumnName="TENSANPHAM" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="MADANHMUC" ColumnName="MADANHMUC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="psInsertRecordSANPHAM" FunctionName="dbQUANLYBANHANGModel.Store.psInsertRecordSANPHAM" />
+    <FunctionImportMapping FunctionImportName="psUpdateRecordSANPHAM" FunctionName="dbQUANLYBANHANGModel.Store.psUpdateRecordSANPHAM" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="dbQUANLYBANHANGModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="dbQUANLYBANHANGModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="dbQUANLYBANHANGModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="dbQUANLYBANHANGModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbQUANLYBANHANGModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="dbQUANLYBANHANGModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbQUANLYBANHANGModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="dbQUANLYBANHANGModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="dbQUANLYBANHANGModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

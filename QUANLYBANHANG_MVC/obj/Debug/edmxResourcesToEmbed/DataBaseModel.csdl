@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbQUANLYBANHANGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="APPLICATIONS">
+    <Key>
+      <PropertyRef Name="ID_APPLICATION" />
+    </Key>
+    <Property Name="ID_APPLICATION" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="APPLICATION_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MENU_FORM" Relationship="Self.APPLICATIONS_MENU_FORM_RELATIONS" FromRole="APPLICATIONS" ToRole="MENU_FORM" />
+  </EntityType>
+  <EntityType Name="GENDER">
+    <Key>
+      <PropertyRef Name="PARTY_ID" />
+      <PropertyRef Name="GENDER_TYPE_ID" />
+      <PropertyRef Name="FROM_DATE" />
+    </Key>
+    <Property Name="PARTY_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="GENDER_TYPE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FROM_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="THRU_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="GENDER_TYPE" Relationship="Self.C_FK__GENDER__GENDER_T__416EA7D8" FromRole="GENDER" ToRole="GENDER_TYPE" />
+  </EntityType>
+  <EntityType Name="GENDER_TYPE">
+    <Key>
+      <PropertyRef Name="GENDER_TYPE_ID" />
+    </Key>
+    <Property Name="GENDER_TYPE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="GENDER_TYPE_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GENDER" Relationship="Self.C_FK__GENDER__GENDER_T__416EA7D8" FromRole="GENDER_TYPE" ToRole="GENDER" />
+  </EntityType>
+  <EntityType Name="GROUP_USER">
+    <Key>
+      <PropertyRef Name="ID_GROUP" />
+    </Key>
+    <Property Name="ID_GROUP" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GROUP_USER_RELATIONSHIP_USER" Relationship="Self.FK_GROUP_USER_RELATIONSHIP_USER_GROUP_USER" FromRole="GROUP_USER" ToRole="GROUP_USER_RELATIONSHIP_USER" />
+  </EntityType>
+  <EntityType Name="GROUP_USER_RELATIONSHIP_USER">
+    <Key>
+      <PropertyRef Name="PARTY_ID" />
+      <PropertyRef Name="ID_GROUP" />
+    </Key>
+    <Property Name="PARTY_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_GROUP" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="GROUP_USER" Relationship="Self.FK_GROUP_USER_RELATIONSHIP_USER_GROUP_USER" FromRole="GROUP_USER_RELATIONSHIP_USER" ToRole="GROUP_USER" />
+    <NavigationProperty Name="PARTY" Relationship="Self.FK_GROUP_USER_RELATIONSHIP_USER_PARTY" FromRole="GROUP_USER_RELATIONSHIP_USER" ToRole="PARTY" />
+    <NavigationProperty Name="MENU_FORM" Relationship="Self.GROUP_RELATIONSHIP_MENU_FORM" FromRole="GROUP_USER_RELATIONSHIP_USER" ToRole="MENU_FORM" />
+  </EntityType>
+  <EntityType Name="MENU_FORM">
+    <Key>
+      <PropertyRef Name="ID_MENU_FORM" />
+    </Key>
+    <Property Name="ID_MENU_FORM" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MENU_FORM_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="MENU_FORM_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOTA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SORT_PARENT" Type="Byte" />
+    <Property Name="SORT" Type="Byte" />
+    <Property Name="ID_MENU_FORM_PARENT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DANH_MUC" Type="Boolean" />
+    <Property Name="VISIBLE" Type="Boolean" />
+    <NavigationProperty Name="MENU_FORM1" Relationship="Self.FK_MENU_FORM_MENU_FORM" FromRole="MENU_FORM" ToRole="MENU_FORM1" />
+    <NavigationProperty Name="MENU_FORM2" Relationship="Self.FK_MENU_FORM_MENU_FORM" FromRole="MENU_FORM1" ToRole="MENU_FORM" />
+    <NavigationProperty Name="APPLICATIONS" Relationship="Self.APPLICATIONS_MENU_FORM_RELATIONS" FromRole="MENU_FORM" ToRole="APPLICATIONS" />
+    <NavigationProperty Name="GROUP_USER_RELATIONSHIP_USER" Relationship="Self.GROUP_RELATIONSHIP_MENU_FORM" FromRole="MENU_FORM" ToRole="GROUP_USER_RELATIONSHIP_USER" />
+  </EntityType>
+  <EntityType Name="PARTY">
+    <Key>
+      <PropertyRef Name="PARTY_ID" />
+    </Key>
+    <Property Name="PARTY_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE_OF_PARTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTMENT_ID" Type="Int32" />
+    <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USERNAME_H" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD_H" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GROUP_USER_RELATIONSHIP_USER" Relationship="Self.FK_GROUP_USER_RELATIONSHIP_USER_PARTY" FromRole="PARTY" ToRole="GROUP_USER_RELATIONSHIP_USER" />
+    <NavigationProperty Name="PERSON" Relationship="Self.FK_PERSON_PARTY" FromRole="PARTY" ToRole="PERSON" />
+    <NavigationProperty Name="tbHOADON" Relationship="Self.FK_tbHOADON_PARTY" FromRole="PARTY" ToRole="tbHOADON" />
+  </EntityType>
+  <EntityType Name="PERSON">
+    <Key>
+      <PropertyRef Name="PARTY_ID" />
+    </Key>
+    <Property Name="PARTY_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CURRENT_LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENT_FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENT_MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENT_NICKNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENT_GENDER_TYPE_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BIRTH_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PEOPLE_ID_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PEOPLE_ID_ISSUE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PEOPLE_ID_ISSUE_PLACE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENT_PHONE_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENT_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PERSON_IMAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PARTY" Relationship="Self.FK_PERSON_PARTY" FromRole="PERSON" ToRole="PARTY" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbCHITIETHOADON">
+    <Key>
+      <PropertyRef Name="MACHITIET" />
+    </Key>
+    <Property Name="MACHITIET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MASANPHAM" Type="Int32" />
+    <Property Name="SOLUONG" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DONGIA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MAHOADON" Type="Int32" />
+    <NavigationProperty Name="tbHOADON" Relationship="Self.FK_tbCHITIETHOADON_tbHOADON" FromRole="tbCHITIETHOADON" ToRole="tbHOADON" />
+    <NavigationProperty Name="tbSANPHAM" Relationship="Self.FK_tbCHITIETHOADON_tbSANPHAM" FromRole="tbCHITIETHOADON" ToRole="tbSANPHAM" />
+  </EntityType>
+  <EntityType Name="tbDANHMUC">
+    <Key>
+      <PropertyRef Name="MADANHMUC" />
+    </Key>
+    <Property Name="MADANHMUC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENDANHMUC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DANHMUCCHA" Type="Int32" />
+    <Property Name="MOTA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbSANPHAM" Relationship="Self.FK_tbSANPHAM_tbDANHMUC" FromRole="tbDANHMUC" ToRole="tbSANPHAM" />
+  </EntityType>
+  <EntityType Name="tbHOADON">
+    <Key>
+      <PropertyRef Name="MAHOADON" />
+    </Key>
+    <Property Name="MAHOADON" Type="Int32" Nullable="false" />
+    <Property Name="MAKHACHHANG" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NGAY" Type="DateTime" Precision="3" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="PARTY" Relationship="Self.FK_tbHOADON_PARTY" FromRole="tbHOADON" ToRole="PARTY" />
+    <NavigationProperty Name="tbCHITIETHOADON" Relationship="Self.FK_tbCHITIETHOADON_tbHOADON" FromRole="tbHOADON" ToRole="tbCHITIETHOADON" />
+    <NavigationProperty Name="tbKHANHHANG" Relationship="Self.FK_tbHOADON_tbKHANHHANG" FromRole="tbHOADON" ToRole="tbKHANHHANG" />
+  </EntityType>
+  <EntityType Name="tbKHANHHANG">
+    <Key>
+      <PropertyRef Name="MAKHACHHANG" />
+    </Key>
+    <Property Name="MAKHACHHANG" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+    <Property Name="GIOITINH" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TAIKHOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MATKHAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbHOADON" Relationship="Self.FK_tbHOADON_tbKHANHHANG" FromRole="tbKHANHHANG" ToRole="tbHOADON" />
+  </EntityType>
+  <EntityType Name="tbSANPHAM">
+    <Key>
+      <PropertyRef Name="MASANPHAM" />
+    </Key>
+    <Property Name="MASANPHAM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENSANPHAM" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DONGIA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SOLUONG" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="HINHANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MADANHMUC" Type="Int32" />
+    <NavigationProperty Name="tbCHITIETHOADON" Relationship="Self.FK_tbCHITIETHOADON_tbSANPHAM" FromRole="tbSANPHAM" ToRole="tbCHITIETHOADON" />
+    <NavigationProperty Name="tbDANHMUC" Relationship="Self.FK_tbSANPHAM_tbDANHMUC" FromRole="tbSANPHAM" ToRole="tbDANHMUC" />
+  </EntityType>
+  <Association Name="C_FK__GENDER__GENDER_T__416EA7D8">
+    <End Role="GENDER_TYPE" Type="Self.GENDER_TYPE" Multiplicity="1" />
+    <End Role="GENDER" Type="Self.GENDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GENDER_TYPE">
+        <PropertyRef Name="GENDER_TYPE_ID" />
+      </Principal>
+      <Dependent Role="GENDER">
+        <PropertyRef Name="GENDER_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GROUP_USER_RELATIONSHIP_USER_GROUP_USER">
+    <End Role="GROUP_USER" Type="Self.GROUP_USER" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GROUP_USER_RELATIONSHIP_USER" Type="Self.GROUP_USER_RELATIONSHIP_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GROUP_USER">
+        <PropertyRef Name="ID_GROUP" />
+      </Principal>
+      <Dependent Role="GROUP_USER_RELATIONSHIP_USER">
+        <PropertyRef Name="ID_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GROUP_USER_RELATIONSHIP_USER_PARTY">
+    <End Role="PARTY" Type="Self.PARTY" Multiplicity="1" />
+    <End Role="GROUP_USER_RELATIONSHIP_USER" Type="Self.GROUP_USER_RELATIONSHIP_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PARTY">
+        <PropertyRef Name="PARTY_ID" />
+      </Principal>
+      <Dependent Role="GROUP_USER_RELATIONSHIP_USER">
+        <PropertyRef Name="PARTY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MENU_FORM_MENU_FORM">
+    <End Role="MENU_FORM" Type="Self.MENU_FORM" Multiplicity="0..1" />
+    <End Role="MENU_FORM1" Type="Self.MENU_FORM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU_FORM">
+        <PropertyRef Name="ID_MENU_FORM" />
+      </Principal>
+      <Dependent Role="MENU_FORM1">
+        <PropertyRef Name="ID_MENU_FORM_PARENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_PARTY">
+    <End Role="PARTY" Type="Self.PARTY" Multiplicity="1" />
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PARTY">
+        <PropertyRef Name="PARTY_ID" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="PARTY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbHOADON_PARTY">
+    <End Role="PARTY" Type="Self.PARTY" Multiplicity="0..1" />
+    <End Role="tbHOADON" Type="Self.tbHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PARTY">
+        <PropertyRef Name="PARTY_ID" />
+      </Principal>
+      <Dependent Role="tbHOADON">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCHITIETHOADON_tbHOADON">
+    <End Role="tbHOADON" Type="Self.tbHOADON" Multiplicity="0..1" />
+    <End Role="tbCHITIETHOADON" Type="Self.tbCHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHOADON">
+        <PropertyRef Name="MAHOADON" />
+      </Principal>
+      <Dependent Role="tbCHITIETHOADON">
+        <PropertyRef Name="MAHOADON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCHITIETHOADON_tbSANPHAM">
+    <End Role="tbSANPHAM" Type="Self.tbSANPHAM" Multiplicity="0..1" />
+    <End Role="tbCHITIETHOADON" Type="Self.tbCHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSANPHAM">
+        <PropertyRef Name="MASANPHAM" />
+      </Principal>
+      <Dependent Role="tbCHITIETHOADON">
+        <PropertyRef Name="MASANPHAM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSANPHAM_tbDANHMUC">
+    <End Role="tbDANHMUC" Type="Self.tbDANHMUC" Multiplicity="0..1" />
+    <End Role="tbSANPHAM" Type="Self.tbSANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDANHMUC">
+        <PropertyRef Name="MADANHMUC" />
+      </Principal>
+      <Dependent Role="tbSANPHAM">
+        <PropertyRef Name="MADANHMUC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbHOADON_tbKHANHHANG">
+    <End Role="tbKHANHHANG" Type="Self.tbKHANHHANG" Multiplicity="0..1" />
+    <End Role="tbHOADON" Type="Self.tbHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKHANHHANG">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Principal>
+      <Dependent Role="tbHOADON">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="APPLICATIONS_MENU_FORM_RELATIONS">
+    <End Role="APPLICATIONS" Type="Self.APPLICATIONS" Multiplicity="*" />
+    <End Role="MENU_FORM" Type="Self.MENU_FORM" Multiplicity="*" />
+  </Association>
+  <Association Name="GROUP_RELATIONSHIP_MENU_FORM">
+    <End Role="GROUP_USER_RELATIONSHIP_USER" Type="Self.GROUP_USER_RELATIONSHIP_USER" Multiplicity="*" />
+    <End Role="MENU_FORM" Type="Self.MENU_FORM" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="dbQUANLYBANHANGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APPLICATIONS" EntityType="Self.APPLICATIONS" />
+    <EntitySet Name="GENDER" EntityType="Self.GENDER" />
+    <EntitySet Name="GENDER_TYPE" EntityType="Self.GENDER_TYPE" />
+    <EntitySet Name="GROUP_USER" EntityType="Self.GROUP_USER" />
+    <EntitySet Name="GROUP_USER_RELATIONSHIP_USER" EntityType="Self.GROUP_USER_RELATIONSHIP_USER" />
+    <EntitySet Name="MENU_FORM" EntityType="Self.MENU_FORM" />
+    <EntitySet Name="PARTY" EntityType="Self.PARTY" />
+    <EntitySet Name="PERSON" EntityType="Self.PERSON" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tbCHITIETHOADON" EntityType="Self.tbCHITIETHOADON" />
+    <EntitySet Name="tbDANHMUC" EntityType="Self.tbDANHMUC" />
+    <EntitySet Name="tbHOADON" EntityType="Self.tbHOADON" />
+    <EntitySet Name="tbKHANHHANG" EntityType="Self.tbKHANHHANG" />
+    <EntitySet Name="tbSANPHAM" EntityType="Self.tbSANPHAM" />
+    <AssociationSet Name="C_FK__GENDER__GENDER_T__416EA7D8" Association="Self.C_FK__GENDER__GENDER_T__416EA7D8">
+      <End Role="GENDER_TYPE" EntitySet="GENDER_TYPE" />
+      <End Role="GENDER" EntitySet="GENDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GROUP_USER_RELATIONSHIP_USER_GROUP_USER" Association="Self.FK_GROUP_USER_RELATIONSHIP_USER_GROUP_USER">
+      <End Role="GROUP_USER" EntitySet="GROUP_USER" />
+      <End Role="GROUP_USER_RELATIONSHIP_USER" EntitySet="GROUP_USER_RELATIONSHIP_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GROUP_USER_RELATIONSHIP_USER_PARTY" Association="Self.FK_GROUP_USER_RELATIONSHIP_USER_PARTY">
+      <End Role="PARTY" EntitySet="PARTY" />
+      <End Role="GROUP_USER_RELATIONSHIP_USER" EntitySet="GROUP_USER_RELATIONSHIP_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MENU_FORM_MENU_FORM" Association="Self.FK_MENU_FORM_MENU_FORM">
+      <End Role="MENU_FORM" EntitySet="MENU_FORM" />
+      <End Role="MENU_FORM1" EntitySet="MENU_FORM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_PARTY" Association="Self.FK_PERSON_PARTY">
+      <End Role="PARTY" EntitySet="PARTY" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbHOADON_PARTY" Association="Self.FK_tbHOADON_PARTY">
+      <End Role="PARTY" EntitySet="PARTY" />
+      <End Role="tbHOADON" EntitySet="tbHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCHITIETHOADON_tbHOADON" Association="Self.FK_tbCHITIETHOADON_tbHOADON">
+      <End Role="tbHOADON" EntitySet="tbHOADON" />
+      <End Role="tbCHITIETHOADON" EntitySet="tbCHITIETHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCHITIETHOADON_tbSANPHAM" Association="Self.FK_tbCHITIETHOADON_tbSANPHAM">
+      <End Role="tbSANPHAM" EntitySet="tbSANPHAM" />
+      <End Role="tbCHITIETHOADON" EntitySet="tbCHITIETHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSANPHAM_tbDANHMUC" Association="Self.FK_tbSANPHAM_tbDANHMUC">
+      <End Role="tbDANHMUC" EntitySet="tbDANHMUC" />
+      <End Role="tbSANPHAM" EntitySet="tbSANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbHOADON_tbKHANHHANG" Association="Self.FK_tbHOADON_tbKHANHHANG">
+      <End Role="tbKHANHHANG" EntitySet="tbKHANHHANG" />
+      <End Role="tbHOADON" EntitySet="tbHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="APPLICATIONS_MENU_FORM_RELATIONS" Association="Self.APPLICATIONS_MENU_FORM_RELATIONS">
+      <End Role="APPLICATIONS" EntitySet="APPLICATIONS" />
+      <End Role="MENU_FORM" EntitySet="MENU_FORM" />
+    </AssociationSet>
+    <AssociationSet Name="GROUP_RELATIONSHIP_MENU_FORM" Association="Self.GROUP_RELATIONSHIP_MENU_FORM">
+      <End Role="GROUP_USER_RELATIONSHIP_USER" EntitySet="GROUP_USER_RELATIONSHIP_USER" />
+      <End Role="MENU_FORM" EntitySet="MENU_FORM" />
+    </AssociationSet>
+    <FunctionImport Name="psDeleteRecordSANPHAM">
+      <Parameter Name="MASANPHAM" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="psGetTableDANHMUC" ReturnType="Collection(dbQUANLYBANHANGModel.psGetTableDANHMUC_Result)">
+      <Parameter Name="MADANHMUC" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="psGetTableLOGIN" ReturnType="Collection(dbQUANLYBANHANGModel.psGetTableLOGIN_Result)">
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="PASSWORD" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="psGetTableSANPHAM" ReturnType="Collection(dbQUANLYBANHANGModel.psGetTableSANPHAM_Result)">
+      <Parameter Name="MASANPHAM" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="psInsertRecordSANPHAM">
+      <Parameter Name="TENSANPHAM" Mode="In" Type="String" />
+      <Parameter Name="DONGIA" Mode="In" Type="Decimal" />
+      <Parameter Name="SOLUONG" Mode="In" Type="Int32" />
+      <Parameter Name="HINHANH" Mode="In" Type="String" />
+      <Parameter Name="MOTA" Mode="In" Type="String" />
+      <Parameter Name="MADANHMUC" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="psUpdateRecordSANPHAM">
+      <Parameter Name="MASANPHAM" Mode="In" Type="Int32" />
+      <Parameter Name="TENSANPHAM" Mode="In" Type="String" />
+      <Parameter Name="DONGIA" Mode="In" Type="Decimal" />
+      <Parameter Name="SOLUONG" Mode="In" Type="Int32" />
+      <Parameter Name="HINHANH" Mode="In" Type="String" />
+      <Parameter Name="MOTA" Mode="In" Type="String" />
+      <Parameter Name="MADANHMUC" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(dbQUANLYBANHANGModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(dbQUANLYBANHANGModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="psGetTableDANHMUC_Result">
+    <Property Type="Int64" Name="autoincrement" Nullable="true" />
+    <Property Type="Int32" Name="MADANHMUC" Nullable="false" />
+    <Property Type="String" Name="tendanhmuc" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="danhmuccha" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="psGetTableLOGIN_Result">
+    <Property Type="Decimal" Name="PARTY_ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TYPE_OF_PARTY" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="DEPARTMENT_ID" Nullable="true" />
+    <Property Type="String" Name="USERNAME" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PASSWORD" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="USERNAME_H" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="PASSWORD_H" Nullable="true" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="psGetTableSANPHAM_Result">
+    <Property Type="Int32" Name="MASANPHAM" Nullable="false" />
+    <Property Type="String" Name="TENSANPHAM" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="DONGIA" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="SOLUONG" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="HINHANH" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MOTA" Nullable="true" />
+    <Property Type="Int32" Name="MADANHMUC" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

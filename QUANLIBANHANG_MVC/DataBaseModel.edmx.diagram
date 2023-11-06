@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cda5b626bd21439b83901534456b766e" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.APPLICATIONS" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.GENDER" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.GENDER_TYPE" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.GROUP_USER" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.GROUP_USER_RELATIONSHIP_USER" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.MENU_FORM" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.PARTY" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.PERSON" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.tbCHITIETHOADON" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.tbDANHMUC" Width="1.5" PointX="3.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.tbHOADON" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.tbKHANHHANG" Width="1.5" PointX="3.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbQUANLYBANHANGModel.tbSANPHAM" Width="1.5" PointX="6" PointY="17.5" IsExpanded="true" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.C_FK__GENDER__GENDER_T__416EA7D8" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_GROUP_USER_RELATIONSHIP_USER_GROUP_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_GROUP_USER_RELATIONSHIP_USER_PARTY" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_MENU_FORM_MENU_FORM" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_PERSON_PARTY" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_tbHOADON_PARTY" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_tbCHITIETHOADON_tbHOADON" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_tbCHITIETHOADON_tbSANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_tbSANPHAM_tbDANHMUC" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.FK_tbHOADON_tbKHANHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.APPLICATIONS_MENU_FORM_RELATIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="dbQUANLYBANHANGModel.GROUP_RELATIONSHIP_MENU_FORM" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,42 @@
+﻿@model QUANLYBANHANG_MVC.tbDANHMUC
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbDANHMUC</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENDANHMUC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENDANHMUC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DANHMUCCHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DANHMUCCHA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MADANHMUC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
